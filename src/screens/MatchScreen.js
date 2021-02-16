@@ -24,11 +24,11 @@ export default function MatchScreen({ navigation }) {
   return (
     <View style={Styles.page}>
       <View style={Styles.headerContainer}>
-        <Text style={Styles.textStyle}>{matchData.score}</Text>
+        <Text style={Styles.textStyle}>{matchData['team-1']} VS {matchData['team-2']}</Text>
       </View>
 
-      <View style={Styles.headerContainer}>
-        <Text style={Styles.textStyle}>{matchData.description}</Text>
+      <View>
+      <Text style={Styles.matchText}>{matchData.score}</Text>
       </View>
 
     </View>

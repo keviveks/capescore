@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 export default StyleSheet.create({
   page: {
@@ -12,13 +12,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  item: {
-    alignItems: 'left',
-    justifyContent: 'left',
-  },
   textStyle: {
-    fontSize: responsiveFontSize(2),
-    color: '#888888',
+    fontSize: responsiveFontSize(5),
+    fontWeight: 'bold',
+    alignSelf: 'center'
   },
   matchText: {
     marginTop: 30,
@@ -28,10 +25,4 @@ export default StyleSheet.create({
     letterSpacing: 2,
     alignSelf: 'center'
   },
-  matchImg: {
-    marginTop: 1,
-    marginRight: 2,
-    width: responsiveWidth(60),
-    height: responsiveHeight(17),
-  }
 });
