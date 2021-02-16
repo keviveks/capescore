@@ -10,6 +10,9 @@ const http = axios.create({
 
 http.interceptors.request.use(function (config) {
   config.url = `${config.url}?apikey=${CRIC_API_KEY}`;
+  if (config.unique_id) {
+    config.url = `${config.url}&unique_id=${config.unique_id}`;
+  }
   return config;
 }, function (error) {
   return Promise.reject(error);

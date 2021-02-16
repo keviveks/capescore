@@ -4,7 +4,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Styles from './styles/Home';
 import * as CricApi from '../api/CricApi';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,6 @@ export default function HomeScreen() {
     getMatches();
   }, []);
 
-  const _handleMatchPress = () => {}
-
   return (
     <View style={Styles.page}>
       <View style={Styles.headerContainer}>
@@ -29,7 +27,9 @@ export default function HomeScreen() {
       </View>
 
       {matches.map(match =>
-        <TouchableOpacity key={match.unique_id} style={Styles.item} onPress={_handleMatchPress}>
+        <TouchableOpacity key={match.unique_id} style={Styles.item} onPress={() =>
+          navigation.navigate('Match', { matchId: match.unique_id })
+        }>
           <View>
             <Text style={Styles.matchText}>{match.title}</Text>
           </View>
